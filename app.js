@@ -5,6 +5,12 @@ angular.module('vcs').config(function($stateProvider, $urlRouterProvider) {
     /* Add New States Above */
     $urlRouterProvider.otherwise('/home');
 
+    $stateProvider
+        .state('home', {
+            url: '/home',
+            templateUrl: 'vsmain/partial/home/home.html'
+        });
+
 });
 
 angular.module('vcs').run(function($rootScope) {
