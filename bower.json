@@ -5,7 +5,8 @@
   "ignore": [
     "**/.*",
     "node_modules",
-    "bower_components"
+    "bower_components",
+    "bower_components/bootstrap"
   ],
   "dependencies": {
     "jquery": "~2.0",

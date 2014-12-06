@@ -1,5 +1,6 @@
 .navbar{
-    border-radius: 0 !important;
+    border-radius: 0;
+    margin-bottom: 5px;
 }
 
 .main-container{
@@ -8,10 +9,14 @@
 }
 
 .app-section{
-    height: 500px !important;
+    height: 500px;
     max-height: 700px;
 }
 
 .section-container{
-    padding:5px !important;   
+    padding:5px;   
+}
+
+footer{
+    margin:0 20px;
 }
