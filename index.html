@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html ng-app="vcs">
+<html data-ng-app="vcs">
 <head>
-  <title></title>
+  <title>Vehicle Cognition System</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta charset="utf-8">
   <link href="app.less" type="text/css" rel="stylesheet/less">
@@ -24,7 +24,7 @@
   <script src="bower_components/angular-resource/angular-resource.js"></script>
   <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
   <script src="bower_components/angular-ui-utils/ui-utils.js"></script>
-  <script src="bower_components/jquery-drag-drop/jquery.drag-drop.plugin.min.js"></script>
+  <script src="bower_components/jquery-dd/jquery-ui.min.js"></script>
   <!-- Add New Bower Component JS Above -->
 
 
@@ -34,14 +34,12 @@
   <script src="vsmain/partial/home/home.js"></script>
   <!-- Add New Component JS Above -->
 
-  <div>
     <div id="content" class="container-fluid">
       <div class="row">
-        <div ui-view>
+        <div data-ui-view class="view-holder">
         </div>
       </div>
     </div>
-  </div>
-
+    
 </body>
 </html>

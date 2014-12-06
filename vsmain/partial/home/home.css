@@ -1,5 +1,5 @@
-::selection{
-    background-color:transparent !important;    
+body::selection{
+    background-color: transparent;    
 }
 
 .navbar{
@@ -8,17 +8,21 @@
 }
 
 .main-container{
-    height: 100%;
-    min-height: 500px;
+    height: 80%;
+    /*min-height: 500px;*/
 }
 
 .app-section{
-    height: 500px;
-    max-height: 700px;
+    /*height: 500px;*/
+    /*max-height: 700px;*/
 }
 
 .section-container{
-    padding:5px;   
+    padding:5px;
+}
+
+.section-container,.section-container .panel, .section-container .panel-body{
+    height:100%;
 }
 
 footer{
@@ -37,8 +41,8 @@ footer{
 }
 
 .scenario-block div{
-    border:1px solid lightgray;
-    cursor:move;
+    border: 2px solid #ecf0f1;
+    cursor: move;
 }
 .app-section .row{
     margin: 0 auto;
@@ -52,4 +56,25 @@ footer{
 .navbar-brand{
     font-size:22px;
     font-weight:bold;
+}
+
+.map-container-drop {
+    border: 4px dashed #019875 !important;
+}
+
+.map-container-droppable {
+    border: 4px dashed #F5AB35;
+}
+
+.ui-drag{
+    -webkit-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 0px 2px 5px 0px rgba(50, 50, 50, 0.5);
+    background-color: #2C3E50;
+    opacity: 0.9;
+    color: white;
+}
+
+.panel{
+    border: 2px solid #ecf0f1;
 }
