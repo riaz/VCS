@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=600,user-scalable=yes" />
+        <title>Drag and Drop jQuery Plugin Simple Example</title>
+        <link rel="stylesheet" type="text/css" href="style.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.6.4/jquery.min.js"></script>
+        <script src="../jquery.drag-drop.plugin.js"></script>
+        <script>
+            $(function() {
+                // First example, A-F.
+                $("#source1>div").dragdrop();
+
+                // Second example, G-L.
+                $("#source2").dragdrop({
+                    makeClone: true,
+                    sourceHide: true,
+                    dragClass: "whileDragging",
+                    canDrag: function($src, event) {
+                        $src = $(event.target);
+                        return $src.hasClass("not") ? null:$src;
+                    },
+                    canDrop: function($dst) {
+                        return $dst.attr("id")=="destination" && $dst.children().size()<2;
+                    },
+                });
+
+                // Third example, M-R.
+                $("#source3>div").dragdrop({
+                    makeClone: true,
+                    sourceClass: "pendingDrop",
+                    dropClass: "highlight",
+                    container: $('.content'),
+                    didDrop: function($src, $dst) {
+                        if ($dst.attr("id")!="destination")
+                            $dst = $dst.parents("#destination");
+                        var currentText = $dst.text();
+                        currentText += $src.text();
+                        $dst.text(currentText);
+                    }
+                });
+
+            });
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Simple Example</h1>
+        </div>
+        <div class="content">
+            <p>Drag any of letter boxes to the area below and note some different visuals and rules that can be specified as options and in stylesheets. Read more below about the different plugin customizations that is demonstrated.</p>
+            <div id="source1" class="source boxes">
+                <div>A</div>
+                <div><span>B</span><span>b</span></div>
+                <div>C</div>
+                <div>D</div>
+                <div>E</div>
+                <div>F</div>
+            </div>
+            <div id="source2" class="source boxes">
+                <div>G</div>
+                <div>H</div>
+                <div>I</div>
+                <div class="not">J</div>
+                <div>K</div>
+                <div>L</div>
+            </div>
+            <div id="source3" class="source boxes">
+                <div>M</div>
+                <div>N</div>
+                <div>O</div>
+                <div>P</div>
+                <div>Q</div>
+                <div>R</div>
+            </div>
+            <div id="destination" class="drop boxes">
+            </div>
+            <p>A-F shows the default behavior of dragging the original element around.</p>
+            <ul>
+                <li>Works with compound elements as in the box "Bb"</li>
+            </ul>
+            <p>G-L shows custom behavior of dragging a clone of the element and using a different css class for its appearence.</p>
+            <ul>
+                <li>Plugin is attached to container element</li>
+                <li>Source element is hidden while dragging</li>
+                <li>Box "J" is not draggable</li>
+                <li>When drop area has 2 elements, no more dropped elements are accepted</li>
+            </ul>
+            <p>M-R shows highlighting the drop area.</p>
+            <ul>
+                <li>Dragging is confined to the containing element centered on the page</li>
+                <li>When dropped, text contents of drop area is concatenated with dropped letter</li>
+            </ul>
+        </div>
+        <a href="https://github.com/mikeplate/jquery-drag-drop-plugin/blob/master/example/simple.html"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://a248.e.akamai.net/assets.github.com/img/30f550e0d38ceb6ef5b81500c64d970b7fb0f028/687474703a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub"></a>
+    </body>
+</html>
+

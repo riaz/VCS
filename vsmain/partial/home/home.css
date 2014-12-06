@@ -1,3 +1,7 @@
+::selection{
+    background-color:transparent !important;    
+}
+
 .navbar{
     border-radius: 0;
     margin-bottom: 5px;
@@ -19,4 +23,33 @@
 
 footer{
     margin:0 20px;
+}
+
+.scenario-block{
+    text-align:center;
+    height:120px;
+}
+
+.scenario-block i{
+    font-size:50px;
+    margin-top:15px;
+    padding:5px;
+}
+
+.scenario-block div{
+    border:1px solid lightgray;
+    cursor:move;
+}
+.app-section .row{
+    margin: 0 auto;
+}
+
+.scenario-block-drag{
+    background-color:#18bc9c;
+    z-index:1000;
+}
+
+.navbar-brand{
+    font-size:22px;
+    font-weight:bold;
 }
