@@ -11,16 +11,20 @@ angular.module('vcs').controller('HomeCtrl',function($scope){
             }
         });
 
-        $('#map-container').droppable({
+        $('#map-holder').droppable({
             accept: '.scenario-block',
             hoverClass: 'map-container-drop',
             activeClass: 'map-container-droppable',
             activate: function( event, ui ) {
-                $('#map-container').parent('.panel').css('border','0');
+                $('#map-holder').closest('.panel').css('border','0');
             },
             deactivate: function( event, ui ) {
-                $('#map-container').parent('.panel').css('border','2px solid #ecf0f1');
+                $('#map-holder').closest('.panel').css('border','2px solid #ecf0f1');
             }
         });
+    },
+    
+    $scope.addMap = function(){
+        
     }
 });

@@ -8,7 +8,7 @@ body::selection{
 }
 
 .main-container{
-    height: 80%;
+    height: 86%;
     /*min-height: 500px;*/
 }
 
@@ -77,4 +77,21 @@ footer{
 
 .panel{
     border: 2px solid #ecf0f1;
+}
+
+#map-controls{
+    height: 10%;
+    background-color: #2C3E50;
+}
+
+#map-controls.row{
+    margin: 0;
+}
+
+#map-holder{
+    height: 90%;
+}
+
+#map-container{
+    padding: 0;
 }
