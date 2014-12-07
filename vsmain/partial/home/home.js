@@ -1,5 +1,8 @@
 angular.module('vcs').controller('HomeCtrl',function($scope, mapconfig, $firebase){
-    $scope.scenarios = [];
+    // $scope.scenarios = [
+    //     "abc",
+    //     "sdfds"
+    //     ];
     
     $scope.init = function(){
         $scope.addMap();
@@ -9,13 +12,12 @@ angular.module('vcs').controller('HomeCtrl',function($scope, mapconfig, $firebas
     },
     
     $scope.getScenarios = function(){
-        var ref = new Firebase("https://vcstest.firebaseio.com/");
-          $scope.scenarios = $firebase(ref.child('scenarios')).$asArray();
-          console.log($scope.scenarios);
-          debugger;
-          setTimeout(function(){
-              debugger;
-          },4000);
+        var ref = new Firebase("https://vcstest.firebaseio.com/scenarios");
+        $scope.sync = $firebase(ref);
+        // var profileObject = $scope.sync.$asArray();
+        // profileObject.$bindTo($scope, "scenarios");
+        $scope.scenarios = $scope.sync.$asArray();
+        console.log($scope.scenarios);
     }
     
     $scope.addMap = function(){
