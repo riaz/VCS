@@ -1,5 +1,28 @@
-angular.module('vcs').controller('HomeCtrl',function($scope){
+angular.module('vcs').controller('HomeCtrl',function($scope, mapconfig, $firebase){
     $scope.init = function(){
+        $scope.addMap();
+        $scope.drag_drop_init();
+        $('[data-toggle="tooltip"]').tooltip();
+        $scope.getScenarios();
+    },
+    
+    $scope.getScenarios = function(){
+        var ref = new Firebase("https://vcstest.firebaseio.com/scenarios");
+          $scope.scenarios = $firebase(ref).$asArray();
+          console.log($scope.scenarios);
+          debugger;
+          setTimeout(function(){
+              debugger;
+          },4000);
+    }
+    
+    $scope.addMap = function(){
+        $scope.google_map= new google.maps.Map(document.getElementById('map-holder'),
+                    mapconfig.mapOptions);
+                    // console.log(mapconfig.mapOptions);
+    },
+    
+    $scope.drag_drop_init = function(){
         $('.scenario-block').draggable({
             helper: 'clone',
             zIndex: 100,
@@ -22,9 +45,6 @@ angular.module('vcs').controller('HomeCtrl',function($scope){
                 $('#map-holder').closest('.panel').css('border','2px solid #ecf0f1');
             }
         });
-    },
-    
-    $scope.addMap = function(){
         
     }
 });

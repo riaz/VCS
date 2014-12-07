@@ -9,42 +9,14 @@
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="row">
-                        <div class="col-lg-6 col-md-6 col-sm-6 scenario-block" id="sr-1">
+                
+                        <div class="col-lg-6 col-md-6 col-sm-6 scenario-block" id="sr-1" data-ng-repeat="scenario in scenarios">
                             <div class="scenario-details">
                                 <i class="fa fa-th-large"></i>
-                                <p>Scenario 1</p>
+                                <p>{{scenario.$value}}</p>
                             </div>
                         </div>
-                       <div class="col-lg-6 col-md-6 col-sm-6 scenario-block" id="sr-2">
-                            <div class="scenario-details">
-                                <i class="fa fa-th-large"></i>
-                                <p>Scenario 2</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 scenario-block" id="sr-3">
-                            <div class="scenario-details">
-                                <i class="fa fa-th-large"></i>
-                                <p>Scenario 3</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 scenario-block" id="sr-4">
-                            <div class="scenario-details">
-                                <i class="fa fa-th-large"></i>
-                                <p>Scenario 4</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 scenario-block" id="sr-5">
-                            <div class="scenario-details">
-                                <i class="fa fa-th-large"></i>
-                                <p>Scenario 5</p>
-                            </div>
-                        </div>
-                        <div class="col-lg-6 col-md-6 col-sm-6 scenario-block" id="sr-6">
-                            <div class="scenario-details">
-                                <i class="fa fa-th-large"></i>
-                                <p>Scenario 6</p>
-                            </div>
-                        </div>
+                
                     </div>
                 </div>
             </div>
@@ -56,7 +28,25 @@
                         
                     </div>
                     <div id="map-controls" class="row">
-                        
+                        <div class="col-lg-1 col-md-1 col-sm-3 control">
+                            <span ng-click="play()" class="glyphicon glyphicon-play control-size" data-toggle="tooltip"
+                              data-placement="top" title="Play"></span>
+                        </div>
+                        <div class="col-lg-1 col-md-1 col-sm-3 control">
+                            <span ng-click="stop()" class="glyphicon glyphicon-stop control-size" data-toggle="tooltip"
+                              data-placement="top" title="Stop"></span>
+                        </div>
+                        <div class="col-lg-3 col-md-3 col-sm-4">
+                            
+                        </div>
+                        <div class="col-lg-7 col-md-7 col-sm-5 route-holder">
+                            <div class="route-details">
+                                <span class="green">From :</span> <span class="white">Patrick's St, Cork, Ireland</span>
+                            </div>
+                            <div class="route-details">
+                                <span class="green">To :</span> <span class="white">The Square, Blarney, Cork, Ireland</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
