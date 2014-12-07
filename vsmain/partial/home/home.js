@@ -1,12 +1,7 @@
-angular.module('vcs').controller('HomeCtrl',function($scope, mapconfig, $firebase){
-    // $scope.scenarios = [
-    //     "abc",
-    //     "sdfds"
-    //     ];
+angular.module('vcs').controller('HomeCtrl',function($scope, mapconfig, $firebase,$timeout){
     
     $scope.init = function(){
         $scope.addMap();
-        $scope.drag_drop_init();
         $('[data-toggle="tooltip"]').tooltip();
         $scope.getScenarios();
     },
@@ -14,10 +9,14 @@ angular.module('vcs').controller('HomeCtrl',function($scope, mapconfig, $firebas
     $scope.getScenarios = function(){
         var ref = new Firebase("https://vcstest.firebaseio.com/scenarios");
         $scope.sync = $firebase(ref);
-        // var profileObject = $scope.sync.$asArray();
-        // profileObject.$bindTo($scope, "scenarios");
-        $scope.scenarios = $scope.sync.$asArray();
-        console.log($scope.scenarios);
+        
+        $scope.scenarios = $scope.sync.$asObject();
+        
+        $scope.scenarios.$loaded().then(function() {
+            $timeout(function(){
+                $scope.drag_drop_init();
+            },1000);
+        });
     }
     
     $scope.addMap = function(){

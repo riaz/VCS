@@ -1,16 +1,16 @@
-<div class="navbar navbar-default" data-ng-controller="HomeCtrl">
+<div class="navbar navbar-default">
   <div class="navbar-header" data-ng-init="init()">
     <a class="navbar-brand" ui-sref="home">Vehicle Cognition System</a>
   </div>
 </div>
-<div class="container-fluid main-container" data-ng-controller="HomeCtrl">
+<div class="container-fluid main-container">
     <div class="row">
         <div class="col-lg-3 col-md-3 col-sm-3 section-container">
             <div class="panel panel-default">
                 <div class="panel-body">
                     <div class="row">
                 
-                        <div class="col-lg-6 col-md-6 col-sm-6 scenario-block" data-ng-repeat="scenario in scenarios">
+                        <div class="col-lg-6 col-md-6 col-sm-6 scenario-block" data-ng-repeat="scenario in scenarios" data-scenario="{{scenario}}">
                             <div class="scenario-details">
                                 <i class="fa fa-th-large"></i>
                                 <p>{{scenario}}</p>
@@ -40,12 +40,12 @@
                             
                         </div>
                         <div class="col-lg-7 col-md-7 col-sm-5 route-holder">
-                            <div class="route-details">
-                                <span class="green">From :</span> <span class="white">Patrick's St, Cork, Ireland</span>
-                            </div>
-                            <div class="route-details">
-                                <span class="green">To :</span> <span class="white">The Square, Blarney, Cork, Ireland</span>
-                            </div>
+                            <!--<div class="route-details">-->
+                            <!--    <span class="green">From :</span> <span class="white">Patrick's St, Cork, Ireland</span>-->
+                            <!--</div>-->
+                            <!--<div class="route-details">-->
+                            <!--    <span class="green">To :</span> <span class="white">The Square, Blarney, Cork, Ireland</span>-->
+                            <!--</div>-->
                         </div>
                     </div>
                 </div>
@@ -61,3 +61,5 @@
     </div>
 
     </div>
+    
+</div>
