@@ -1,4 +1,6 @@
 angular.module('vcs').controller('HomeCtrl',function($scope, mapconfig, $firebase){
+    $scope.scenarios = [];
+    
     $scope.init = function(){
         $scope.addMap();
         $scope.drag_drop_init();
@@ -7,8 +9,8 @@ angular.module('vcs').controller('HomeCtrl',function($scope, mapconfig, $firebas
     },
     
     $scope.getScenarios = function(){
-        var ref = new Firebase("https://vcstest.firebaseio.com/scenarios");
-          $scope.scenarios = $firebase(ref).$asArray();
+        var ref = new Firebase("https://vcstest.firebaseio.com/");
+          $scope.scenarios = $firebase(ref.child('scenarios')).$asArray();
           console.log($scope.scenarios);
           debugger;
           setTimeout(function(){
