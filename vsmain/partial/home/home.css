@@ -127,3 +127,11 @@ footer{
 .route-holder{
     padding-top: 5px;
 }
+
+#about-us{
+    font-size: 18px !important;
+}
+
+#about-us .lead{
+    font-size:15px;
+}

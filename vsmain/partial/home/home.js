@@ -18,6 +18,7 @@ angular.module('vcs').controller('HomeCtrl',['$scope', 'mapconfig', '$firebase',
         $scope.addMap();
         $('[data-toggle="tooltip"]').tooltip();
         $scope.getScenarios();
+        $('#myModal').modal('show');
     },
     
     $scope.getScenarios = function(){

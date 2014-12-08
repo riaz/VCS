@@ -44,3 +44,172 @@
     </div>
     
 </div>
+
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+        <h4 class="modal-title" id="myModalLabel">About</h4>
+      </div>
+      <div class="modal-body">
+      <section id="about-us">
+        <div class="container-fluid">
+        <div class="center wow fadeInDown">
+            <h2>About Vehicle Cognition System</h2>
+
+            <p class="lead">Vehicle Cognition System is an intelligent software system that fits into the Pervasive
+                Computing genre. <br/>Vehicle Cognition System uses the features available in modern smart-phone to
+                develop a non-tangible vehicle-to-vehicle protocol that acts as a warning system and warns the car about
+                any approaching car by building a virtual map of car trajectories , that the cars in the vicinity is
+                likely to follow based on crucial information obtained through the protocol.<br/> The system also
+                proposes a path finding algorithm, executed by the vehicle guidance system activated by the protocol’s
+                collision detection system, by taking our car controls, through cruise control. <br/>Once the guidance
+                system guides the car to safety the protocol relinquishes the control of the car to the driver.
+
+                <br/>
+            <ol align="left">
+                <b>Devices/Other Physical Objects:</b>
+                <li>Smart-Phone possessing the features mentioned below</li>
+                <li>Cars or other Automobiles</li>
+                <li>Roads to Navigate</li>
+            </ol>
+            <ol align="left">
+                <b>Hardware Technologies Used:</b>
+                <li>Bluetooth [Real-time Communication through Blue-Jacking simulated using Pub Nub Communication
+                    API].
+                </li>
+                <li>GPS (used only at the time of car engine ignition, to initialize x,y (i.e. current
+                    latitude/longitude)). [Initial Location Information]
+                </li>
+                <li>Compass [To know the instantaneous orientation of the designated Car]</li>
+            </ol>
+            <ol align="left">
+                <b>Libraries/APIs Utilized:</b>
+                <li>PubNub API for real-time communication</li>
+                <li>Google Maps API</li>
+                <li>Google Directions API</li>
+                <li>HTML5</li>
+                <li>Bootstrap</li>
+                <li>AngularJS</li>
+                <li>FireBase Database</li>
+                <li>Underscore</li>
+            </ol>
+            <ol align="left">
+                <b>How It Works</b>
+                <li>Drag and Drop a Scenario from the Left Panel</li>
+                <li>Click on the Play Button , to Simulate Vehicular Navigation</li>
+                <li>Vehicles populate Master Tables , when they intercept the Region of Presence of adjacent Vehicles </li>
+                <li>The System Computes Possibility of Collision </li>
+                <li>If any collision detect , the Car Guidance System , drift the car to safety.</li>
+                <li></li>
+
+            </ol>
+            </p>
+        </div>
+
+        <!-- our-team -->
+        <div class="team">
+            <div class="center wow fadeInDown">
+                <h2>Team of Vehicle Cognition System</h2>
+
+                <p class="lead">The following are members of our project</p>
+            </div>
+            <div class="col-sm-12">
+                <div class="row">
+                    <div class="col-sm-7 five-three">
+                        <div class="row">
+                            <div class="col-sm-4">
+                                <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms"
+                                     data-wow-delay="300ms">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h4>Munshi Riaz</h4>
+                                            <!--<ul class="social_icons">-->
+                                            <!--<li><a href="#"><i class="fa fa-facebook"></i></a></li>-->
+                                            <!--<li><a href="#"><i class="fa fa-twitter"></i></a></li>-->
+                                            <!--<li><a href="#"><i class="fa fa-google-plus"></i></a></li>-->
+                                            <!--</ul>-->
+                                        </div>
+                                    </div>
+                                    <!--/.media -->
+                                    <p>Worked on the Firebase Database to save scenarios data,and worked on path finding
+                                        algorithm.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms"
+                                     data-wow-delay="300ms">
+                                    <!--<div class="media">-->
+                                    <!--<div class="media-body">-->
+                                    <h4>Shiva Shankar Prakash</h4>
+                                    <!--</div>-->
+                                    <!--</div>-->
+                                    <!--/.media -->
+                                    <p>Worked on PubNub API for real time communication and using PubNub generated
+                                        message channels & used firebase API to update the current car status & read the current positions of other moving objects &  notify the objects using PubNub.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-4">
+                                <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms"
+                                     data-wow-delay="300ms">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h4>Anil Talla</h4>
+                                        </div>
+                                    </div>
+                                    <!--/.media -->
+                                    <p>worked on PubNub and Google Directions API,also worked on underscore </p>
+                                </div>
+                            </div>
+                            <!-- end inner row -->
+                        </div>
+                    </div>
+                    <div class="col-sm-5 five-two">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms"
+                                     data-wow-delay="300ms">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h4>Harsh Praful</h4>
+                                        </div>
+                                    </div>
+                                    <!--/.media -->
+                                    <p>Worked on the basic framework of the application and have specifically focused on
+                                        the actual simulation of the car navigation using Google Maps and Direction
+                                        APIs.Also worked on AngularJs for data bindings.</p>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="single-profile-top wow fadeInDown" data-wow-duration="1000ms"
+                                     data-wow-delay="300ms">
+                                    <div class="media">
+                                        <div class="media-body">
+                                            <h4>Wajid Baba</h4>
+                                        </div>
+                                    </div>
+                                    <!--/.media -->
+                                    <p>Worked on populating the master table of each car , based on the cars in the
+                                        vicinity that presently intersect the region around the host car , available
+                                        from the intersection algorithms,and also worked on user interface of project
+                                        using bootstrap.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end inner row -->
+                    </div>
+                </div>
+                <!-- end outer row -->
+            </div>
+        </div>
+    </div>
+    <!--/.container-->
+</section>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Live Preview</button>
+      </div>
+    </div>
+  </div>
+</div>
