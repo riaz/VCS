@@ -1,7 +1,7 @@
-angular.module('vcs', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'vsmain','firebase']);
+angular.module('vcs', ['ui.bootstrap', 'ui.utils', 'ui.router', 'ngAnimate', 'vsmain', 'firebase']);
 
 angular.module('vcs').config(function($stateProvider, $urlRouterProvider) {
-
+    
     /* Add New States Above */
     $urlRouterProvider.otherwise('/home');
 
