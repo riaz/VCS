@@ -1,8 +1,9 @@
 <html>
 <head>
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css"/>
+     <link href="bower_components/bootstrap/dist/css/bootstrap.css" type="text/css" rel="stylesheet">
     <script src='https://cdn.firebase.com/js/client/2.0.4/firebase.js'></script>
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js'></script>
+    <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="https://cdn.pubnub.com/pubnub.min.js"></script>
     <style>
         #footer {
@@ -17,9 +18,12 @@
     </style>
 </head>
 <body>
-<br>
-
-
+<div class="navbar navbar-default">
+  <div class="navbar-header" data-ng-init="init()" style="width:100%">
+    <a class="navbar-brand" href="index.html" style="cursor:pointer;">Vehicle Cognition System Live Preview</a>
+  </div>
+</div>
+<br />
 <div class="container-fluid" id="main">
     <div class="row-fluid">
         <div class="col-lg-2">
