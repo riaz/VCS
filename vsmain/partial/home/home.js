@@ -29,7 +29,6 @@ angular.module('vcs').controller('HomeCtrl',['$scope', 'mapconfig', '$firebase',
         $scope.scenarios.$loaded().then(function() {
             $timeout(function(){
                 $scope.drag_drop_init();
-                console.log($scope.scenarios);
             },1000);
         });
         
@@ -41,7 +40,6 @@ angular.module('vcs').controller('HomeCtrl',['$scope', 'mapconfig', '$firebase',
         $scope.scenarios_data.$loaded().then(function() {
             $timeout(function(){
                 $scope.drag_drop_init();
-                console.log($scope.scenarios_data);
                 $scope.ready = true;
             },1000);
         });
@@ -102,9 +100,23 @@ angular.module('vcs').controller('HomeCtrl',['$scope', 'mapconfig', '$firebase',
          $scope.playCars();
     },
     
+    $scope.showMessage = function (msg, type) {
+        $.bootstrapGrowl(msg, // Messages
+            {
+                type: type, // info, success, warning and danger
+                offset: {
+                    from: "top",
+                    amount: 20
+                },
+                align: "right",
+                width:400,
+                delay: 4000,
+                allow_dismiss: true,
+                stackup_spacing: 10
+            });
+    },
+    
     $scope.playCars = function(){
-        debugger;
-        // for(var i in $scope.markers){
             $scope.timers[0] = setInterval(function () {
             var directions = $scope.markers[0].directions;
             if($scope.markers[0].currentFrame < $scope.markers[0].directions.length){
@@ -112,9 +124,28 @@ angular.module('vcs').controller('HomeCtrl',['$scope', 'mapconfig', '$firebase',
                 $scope.circles[0].setCenter($scope.markers[0].directions[$scope.markers[0].currentFrame]);
                 $scope.markers[0].currentFrame++;
                 $scope.google_map.panTo($scope.markers[0].directions[$scope.markers[0].currentFrame]);
-                console.log($scope.markers[1].currentFrame);
+                
+                if($scope.markers[0].currentFrame==70){
+                    
+                    var circleOptions = {
+                    strokeColor: $scope.colors.green,
+                    strokeOpacity: 0.8,
+                    strokeWeight: 2,
+                    fillColor: $scope.colors.green,
+                    fillOpacity: 0.35,
+                    center: directions[$scope.markers[0].currentFrame],
+                    radius: 20
+                    };
+                    var circle = new google.maps.Circle(circleOptions);
+                    circle.setMap($scope.google_map);
+                    $scope.circles[0].setMap(null);
+                    $scope.circles[0] = circle;
+                }
+                    
                 if(directions[$scope.markers[0].currentFrame].turn == 'left'){
                     $scope.markers[0].setIcon(carimages.yellow_l_90);
+                    
+                    $scope.showMessage('A Car is approaching from East Please Slowdown', 'warning');
                     
                     var circleOptions = {
                     strokeColor: $scope.colors.red,
@@ -125,6 +156,7 @@ angular.module('vcs').controller('HomeCtrl',['$scope', 'mapconfig', '$firebase',
                     center: directions[$scope.markers[0].currentFrame],
                     radius: 20
                     };
+                    
                     
                     $scope.circles[0].setMap(null);
                     // $scope.circles[1].setMap(null);
@@ -142,13 +174,11 @@ angular.module('vcs').controller('HomeCtrl',['$scope', 'mapconfig', '$firebase',
                     var circle = new google.maps.Circle(circleOptions);
                     var circleNew = new google.maps.Circle(circleOptionsNew);
                     $scope.circles[0] = circle;
-                    $scope.circles[1] = circleNew;
                     circle.setMap($scope.google_map);
                 }
                 
                 if(directions[$scope.markers[0].currentFrame].turn == 'up'){
                     $scope.markers[0].setIcon(carimages.yellow);
-                    
                 }
             }
             }, Math.floor($scope.speed/$scope.markers[0].speed));  
