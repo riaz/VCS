@@ -111,6 +111,11 @@ footer{
     color: #019875;
 }
 
+.scenario-name{
+    margin-top:15px;
+    color: white;
+}
+
 .white{
     color:white;
 }
