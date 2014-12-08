@@ -87,17 +87,53 @@ angular.module('vcs').controller('HomeCtrl',['$scope', 'mapconfig', '$firebase',
           
     },
     
+    $scope.selectCar = function(direction,car){
+        var icon = '';
+        if(car == 'car1'){
+            switch(direction) {
+                case 'east':
+                    icon = carimages.yellow_r_90;  
+                    break;
+                case 'west':
+                    icon = carimages.yellow_l_90;
+                    break;
+                case 'north':
+                    icon = carimages.yellow;
+                    break;
+                case 'south':
+                    break;
+            }            
+        }
+        else{
+            switch(direction) {
+                case 'east':
+                    icon = carimages.gray_r_90;
+                    break;
+                case 'west':
+                    icon = carimages.gray_l_90;
+                    break;
+                case 'north':
+                    icon = carimages.gray;
+                    break;
+                case 'south':
+                    break;
+            }
+        }
+        return icon;
+    },
+    
     $scope.plotMarkers = function(){
         for(var i in $scope.current_scenario_data.cars){
             var icon = carimages.gray;
             var position = $scope.current_scenario_data.cars[i].directions[0];
             
-            if($scope.current_scenario_data.cars[i].id == 'car1'){
-                icon = carimages.yellow;
-            }
-            
+            icon = $scope.selectCar($scope.current_scenario_data.cars[i].moving,$scope.current_scenario_data.cars[i].id);
+
+            if($scope.current_scenario_data.cars[i].startTime < 1000){ 
+               
+            }  
+
             var marker = new google.maps.Marker({
-                map:$scope.google_map,
                 animation: google.maps.Animation.DROP,
                 position: position,
                 icon: icon
@@ -111,17 +147,20 @@ angular.module('vcs').controller('HomeCtrl',['$scope', 'mapconfig', '$firebase',
                 strokeWeight: 2,
                 fillColor: $scope.colors.green,
                 fillOpacity: 0.35,
-                map: $scope.google_map,
                 center: position,
                 radius: 20
             };
 
             var circle = new google.maps.Circle(circleOptions);
             $scope.circles.push(circle);
-            
-            marker.setMap($scope.google_map);
-            circle.setMap($scope.google_map);
-        }  
+    
+            if($scope.current_scenario_data.cars[i].startTime < 1000){ 
+                marker.setMap($scope.google_map);
+                circle.setMap($scope.google_map);
+            }  
+                
+        }
+    
     },
     
     $scope.stop = function(){

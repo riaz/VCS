@@ -27,16 +27,16 @@ angular.module('vcs').constant('carimages', {
         
         gray_l_90 : {
             url: 'images/car-gray-90-l.png',
-            size: new google.maps.Size(18, 36),
+            size: new google.maps.Size(36, 18),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(9, 18)
+            anchor: new google.maps.Point(18, 9)
         },
         
         gray_r_90 : {
             url: 'images/car-gray-90-r.png',
-            size: new google.maps.Size(18, 36),
+            size: new google.maps.Size(36, 18),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(9, 18)
+            anchor: new google.maps.Point(18, 9)
         },
         
         yellow : {
@@ -48,16 +48,16 @@ angular.module('vcs').constant('carimages', {
         
         yellow_l_90 : {
             url: 'images/car-yellow-90-l.png',
-            size: new google.maps.Size(18, 36),
+            size: new google.maps.Size(36, 18),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(9, 18)
+            anchor: new google.maps.Point(18, 9)
         },
         
         yellow_r_90 : {
             url: 'images/car-yellow-90-r.png',
-            size: new google.maps.Size(18, 36),
+            size: new google.maps.Size(36, 18),
             origin: new google.maps.Point(0, 0),
-            anchor: new google.maps.Point(9, 18)
+            anchor: new google.maps.Point(18, 36)
         },
         
 });
